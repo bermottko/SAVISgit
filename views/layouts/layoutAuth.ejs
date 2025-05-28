@@ -20,45 +20,20 @@
             font-family: Arial, sans-serif;
             background-color: #00204c;
         }
-        .jumbotron {
-            background-color: #007bff;
-            color: white;
-            padding: 2rem 1rem;
-            margin-bottom: 2rem;
-            border-radius: 0.5rem;
+    /*NAV BAR*/
+        .navbar {
+        background-color: #002855; 
+        padding-top: 1.5rem;       
+        padding-bottom: 1.5rem;
         }
-        .jumbotron h1 {
-            font-size: 2.5rem;
-            font-weight: bold;
+        .nav-link {
+            color:#f8f9fa;
+            transition: color 0.3s ease;
         }
-        .btn-custom {
-            background-color: #28a745;
-            color: white;
-            border-radius: 25px;
-            padding: 0.75rem 1.5rem;
-            font-size: 1.1rem;
-            margin-top: 1rem;
-            transition: background-color 0.3s ease;
+        .nav-link:hover {
+            color: #d8d8d8; 
         }
-        .btn-custom:hover {
-            background-color: #218838;
-        }
-        .feature-card {
-            border-radius: 15px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            margin-bottom: 1.5rem;
-            padding: 1.5rem;
-            background-color: white;
-            text-align: center;
-        }
-        .feature-card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-        }
-        .navbar-brand {
-            font-size: 1.5rem;
-            font-weight: bold;
-        }
+
     /*TELA INCIAL*/
         .container-tela-inicial {
             display: flex;
@@ -95,29 +70,29 @@
         }
         .logo-subnome {
             font-family: 'League Spartan', sans-serif;
-            font-size: 20px; /* menor que o nome */
-            color: #235284; /* tom azul mais claro ou o que preferir */
+            font-size: 20px; 
+            color: #235284; 
             margin-top: 6px; /* espaço superior para afastar da logo-nome */
-            text-align: center; /* centraliza o texto */
+            text-align: center; 
             font-weight: bold;
 }
         .botoes{
             display: flex;
-            gap: 40px; /* Espaçamento horizontal entre os botões */
-            justify-content: center; /* Centraliza os botões */
+            gap: 40px; /* espaçamento horizontal entre os botões */
+            justify-content: center; /* ventraliza os botões */
             margin-top: 65px;
         }
 
         .botao {
             display: inline-block;
-            background-color: #00204c; /* azul básico */
-            color: white; /* texto branco */
-            padding: 10px 20px; /* espaço interno */
-            border-radius: 5px; /* cantos levemente arredondados */
+            background-color: #00204c; 
+            color: white; 
+            padding: 10px 20px; 
+            border-radius: 5px; /* cantos arredondados */
             text-decoration: none; /* remove sublinhado */
         }
         .botao:hover {
-            background-color: #001129; /* azul um pouco mais escuro no hover */
+            background-color: #001129; 
         }
     /*CADASTRO*/
         .botao-cadastro{
@@ -127,27 +102,28 @@
             border-radius: 5px;
             text-decoration: none;
             margin-top: 30px; 
-            text-align: center; /* centraliza o texto dentro do botão */
-            width: fit-content; /* botão só do tamanho do conteúdo */
-            box-shadow: none; /* remove sombra */
-            border: none; /* remove borda */
+            text-align: center; 
+            width: fit-content; 
+            box-shadow: none; 
+            border: none; 
         }
         .botao-cadastro:hover {
-            background-color: #001129; /* azul um pouco mais escuro no hover */
+            background-color: #001129; 
         }
         .criar-conta {
             text-decoration: none;
         }
         .texto-criar-conta {
             font-size: 14px;
-            display: block; /* Garante que a margem funcione */
-            margin-top: 30px; /* Ajuste conforme o espaço desejado */
+            display: block; 
+            margin-top: 30px; 
             text-align: center;
         }
 
     </style>
 </head>
 <body>
+    <%- include('../partials/navbar') %>
     <%- body %>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>

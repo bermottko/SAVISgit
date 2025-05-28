@@ -1,28 +1,35 @@
-<body class="body-cadastro" style="background-color: #002b5c;">
-  <div class="d-flex justify-content-center align-items-start pt-5 pb-5" style="min-height: 100vh;">
+ <div class="d-flex justify-content-center align-items-start pt-5 pb-5" style="min-height: 100vh;">
     <div class="card shadow rounded-4 p-5 mb-5" style="width: 100%; max-width: 600px; background-color: #fff;">
-      <form action="/usuario" method="POST" enctype="multipart/form-data">
-        <div class="text-center mb-4">
-          <img src="/assets/logo.png" alt="Logo" style="width: 50px; height: 68px;">
+      <form action="/auth/add" method="POST">
+    <!--  <div class="text-center mb-4">
+          <img src="/assets/logo.png" alt="Logo" style="width: 50px; height: 70px;">
           <h5 class="mt-2 logo-nome-cadastro">Criando uma conta Savis</h5>
-        </div>
+
+          <label for="foto_perfil">
+        <img id="preview_foto" src="/assets/default-profile.jpg" alt="Foto de perfil"
+         class="rounded-circle mt-3 mb-2"
+         style="width: 90px; height: 90px; object-fit: cover; cursor: pointer; border: 2px solid #ccc;" />
+        </label>
+
+          <input type="file" id="foto_perfil" name="foto_perfil" accept="image/*" class="d-none" onchange="previewImagem(event)">
+        </div> -->
 
         <div class="mb-3">
           <label for="nome" class="form-label">Nome</label>
           <input type="text" id="nome" name="nome" maxlength="40" required class="form-control" placeholder="Digite seu nome completo" />
         </div>
 
-        <div class="mb-3">
+     <!-- <div class="mb-3">
           <label for="data_nasc" class="form-label">Data de nascimento</label>
           <input type="date" id="data_nasc" name="data_nasc" required class="form-control" />
-        </div>
+        </div> -->
 
         <div class="mb-3">
           <label for="CPF" class="form-label">CPF</label>
           <input type="text" id="CPF" name="CPF" maxlength="14" required class="form-control" placeholder="Digite seu CPF" />
         </div>
 
-        <div class="mb-3">
+     <!--   <div class="mb-3">
           <label for="genero" class="form-label">Gênero</label>
           <select id="genero" name="genero" required class="form-select">
             <option selected disabled>Não selecionado</option>
@@ -106,11 +113,6 @@
         </div>
 
         <div class="mb-3">
-          <label for="sus" class="form-label">SUS</label>
-          <input type="file" id="sus" name="sus" accept="image/*" class="form-control" />
-        </div>
-
-        <div class="mb-3">
           <label for="senha" class="form-label">Senha</label>
           <input type="password" id="senha" name="senha" required class="form-control" placeholder="Crie uma senha" />
         </div>
@@ -118,13 +120,26 @@
         <div class="mb-3">
           <label for="confirmar_senha" class="form-label">Confirme a senha</label>
           <input type="password" id="confirmar_senha" name="confirmar_senha" required class="form-control" placeholder="Digite a senha novamente" />
-        </div>
+        </div> -->
 
         <div class="d-flex justify-content-between">
             <a href="#" onclick="window.history.back(); return false;" class="botao-cadastro">Voltar</a>
             <button type="submit" class="botao-cadastro">Cadastrar</button>
-        </div>
+        </div> 
       </form>
     </div>
   </div>
-</body>
+<script>
+  function previewImagem(event) {
+    const input = event.target;
+    const img = document.getElementById('preview_foto');
+    
+    if (input.files && input.files[0]) {
+      const reader = new FileReader();
+      reader.onload = function(e) {
+        img.src = e.target.result;
+      };
+      reader.readAsDataURL(input.files[0]);
+    }
+  }
+</script>

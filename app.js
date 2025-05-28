@@ -4,10 +4,12 @@ const path = require('path');
 const bodyParser = require('body-parser');
 const methodOverride = require('method-override');
 const expressLayouts = require('express-ejs-layouts');
+const Post = require ('./models/Post');
 
 // Rotas
 const indexRoutes = require('./routes/indexRoutes');
-const priRoutes = require('./routes/priRoutes');
+const authRoutes = require('./routes/authRoutes');
+const adminRoutes = require('./routes/adminRoutes');
 
 // Inicializa app
 const app = express();
@@ -15,9 +17,10 @@ const PORT = process.env.PORT || 3001;
 
 // Configura EJS e layouts
 app.set('view engine', 'ejs');
+app.set('layout', './layouts/layoutAuth');
 app.set('views', path.join(__dirname, 'views'));
 app.use(expressLayouts);
-app.set('layout', 'layout');
+
 
 // Middlewares
 app.use(bodyParser.json());
@@ -29,7 +32,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // Rotas
 app.use('/', indexRoutes);
-app.use('/pri', priRoutes);
+app.use('/auth', authRoutes);
+app.use('/admin', adminRoutes);
 
 // Inicializa o servidor
 app.listen(PORT, () => {
